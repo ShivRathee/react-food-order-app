@@ -84,3 +84,30 @@ nav {
   opacity: 0.6;
   font-size: 18px;
 }
+
+.search-restro {
+  height: 52px;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  padding: 20px 0 0;
+}
+.search-input {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  padding: 18px 10px;
+  font-size: 20px;
+}
+.search-input:focus {
+  border: 1px solid #8a2be2;
+  outline: none;
+}
+.btn-search {
+  color: #fff;
+  background-color: #161a28;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0px 10px;
+  font-size: 20px;
+}
