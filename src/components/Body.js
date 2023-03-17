@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
-import { restaurnatList } from "../constants";
 import ReasturantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 function filterData(searchInput, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant.data.name.includes(searchInput)
+    restaurant?.data?.name?.toLowerCase().includes(searchInput.toLowerCase())
   );
+  return filterData;
 }
 
 const Body = () => {
   // const searchTxt = "KFC";
 
   // searchText is a local state variable
-  const [restaurants, setRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   // empty dependency array => once after render
@@ -29,10 +31,17 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     // optional chaining
-    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
-  return (
+  if (!allRestaurants) return null;
+  if (filteredRestaurants?.length === 0)
+    return <h1>No Restaurant match your Search</h1>;
+
+  return allRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-restro">
         <input
@@ -47,15 +56,16 @@ const Body = () => {
         <button
           className="btn-search"
           onClick={() => {
-            const data = filterData(searchInput, restaurants);
-            setRestaurants(data);
+            const data = filterData(searchInput, allRestaurants);
+            setFilteredRestaurants(data);
           }}
         >
           Search
         </button>
       </div>
+
       <div className="restaurnat-list">
-        {restaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <ReasturantCard {...restaurant.data} key={restaurant.data.id} />
           );
