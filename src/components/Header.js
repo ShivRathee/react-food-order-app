@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Title = () => (
   <img src="https://cdn.shopify.com/s/files/1/0420/7073/7058/files/blackoption_200x.png?v=1659016547" />
@@ -12,14 +13,27 @@ const Header = () => {
         <Title />
         <div>
           <ul className="nav-links">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact Us</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
             <li>Cart</li>
             {isLoggedIn ? (
-              <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+              <button
+                className="btn-login"
+                onClick={() => setIsLoggedIn(false)}
+              >
+                Logout
+              </button>
             ) : (
-              <button onClick={() => setIsLoggedIn(true)}>Login</button>
+              <button className="btn-login" onClick={() => setIsLoggedIn(true)}>
+                Login
+              </button>
             )}
           </ul>
         </div>
