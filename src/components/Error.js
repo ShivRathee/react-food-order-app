@@ -1,12 +1,14 @@
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 
 const Error = () => {
   const err = useRouteError();
   return (
-    <div>
-      <h1>Oops!!!</h1>
-      <h2>Something went wrong</h2>
-      <h2>{err.status + ": " + err.statusText}</h2>
+    <div className="error">
+      <h1>{err.status}</h1>
+      <h2>{"PAGE " + err.statusText.toUpperCase()}</h2>
+      <button className="btn-home">
+        <Link to="/">HOMEPAGE</Link>
+      </button>
     </div>
   );
 };

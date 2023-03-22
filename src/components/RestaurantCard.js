@@ -1,4 +1,4 @@
-import { IMG_CNG_URL } from "../constants";
+import { IMG_CDN_URL } from "../constants";
 
 const ReasturantCard = ({
   name,
@@ -9,7 +9,7 @@ const ReasturantCard = ({
   return (
     <div className="card">
       <div className="dummy-img blink-it">
-        <img className="image" src={IMG_CNG_URL + cloudinaryImageId} />
+        <img className="image" src={IMG_CDN_URL + cloudinaryImageId} />
       </div>
       <div className="card-body">
         <h2 className="card-body-title">{name}</h2>

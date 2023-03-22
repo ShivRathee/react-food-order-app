@@ -118,27 +118,68 @@ nav {
   outline: none;
 }
 .btn-search {
-  color: #fff;
-  background-color: #161a28;
-  border: none;
   border-radius: 0 4px 4px 0;
   padding: 0px 10px;
   font-size: 20px;
-}
-.btn-search {
-  cursor: pointer;
+  width: 100px;
 }
 
 .btn-login {
-  color: #fff;
-  background-color: #000;
-  border: none;
-  border-radius: 4px;
   padding: 12px 15px;
   width: 70px;
   height: 35px;
 }
 
-.btn-login:hover {
+.error {
+  text-align: center;
+}
+.error h1 {
+  font-size: 150px;
+}
+.error h2 {
+  margin-top: -120px;
+  margin-left: 26px;
+}
+button:hover {
   cursor: pointer;
+  font-weight: 600;
+}
+button {
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+}
+.error .btn-home {
+  padding: 12px 15px;
+  width: 120px;
+  height: 35px;
+  color: #fff !important;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+button a {
+  color: #fff !important;
+}
+.nav-links a {
+  width: 50px;
+  display: block;
+}
+
+.nav-links li a:hover {
+  border-radius: 4px solid rgb(68, 67, 67);
+  font-weight: 500;
+}
+
+.about {
+  text-align: center;
+  height: 465px;
+}
+.about ul li {
+  list-style: none;
+  margin-right: 40px;
 }
