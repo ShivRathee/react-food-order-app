@@ -67,6 +67,7 @@ const Body = () => {
 
       <div className="restaurnat-list">
         {filteredRestaurants.map((restaurant) => {
+          console.log(restaurant);
           return (
             <ReasturantCard {...restaurant.data} key={restaurant.data.id} />
           );
