@@ -235,7 +235,7 @@ button a {
   font-size: 11px;
   color: #8b8d97;
   font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 .avg-rating {
   color: #3d9b6d;
@@ -338,4 +338,90 @@ button a {
   -webkit-box-direction: normal;
   flex-direction: column;
   width: 230px;
+}
+
+.menuCard-container {
+  height: 130px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.menuCard-divider {
+  border-bottom: 0.5px solid #d3d3d3;
+  height: 0.5px;
+  margin: 20px 0;
+}
+.menuCard-details {
+  max-width: calc(100% - 144px);
+}
+.menuCard-name {
+  margin-top: 4px;
+  margin-right: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3e4152;
+  word-break: break-word;
+}
+.menuCard-price {
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: -13px;
+  font-size: 14px;
+  margin-right: 8px;
+  font-weight: 400;
+  color: #3e4152;
+}
+.menuCard-desc {
+  margin-top: 14px;
+  line-height: 18px;
+  font-family: ProximaNova, arial, "Helvetica Neue", sans-serif;
+  color: rgba(40, 44, 63, 0.45);
+  width: 70%;
+  letter-spacing: -0.3px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.menuCard-img {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(40, 44, 63, 0.05);
+  background-blend-mode: overlay;
+  height: 96px;
+  border-radius: 6px;
+}
+.menuCard-Header {
+  font-family: ProximaNova, arial, "Helvetica Neue", sans-serif;
+  color: #3e4152;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  display: inline-block;
+}
+.menuCard-titleHeader {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding-right: 16px;
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+}
+.vegOnly {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #3d4152;
+  font-weight: 600;
+}
+.arrow {
+  background-color: #0000 !important;
+  background-image: none;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.arrow:hover {
+  cursor: pointer;
 }

@@ -1,17 +1,14 @@
 import { useParams } from "react-router-dom";
-import { IMG_CDN_URL } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";
 import RestaurantDetailHead from "./RestaurantDetailHead";
 import MenuItemsList from "./MenuItemsList";
 import OfferList from "./OfferList";
-import { useEffect, useState } from "react";
 
 const RestaurantDetail = () => {
   const params = useParams();
-  const { resId } = params;
-  const restaurant = useRestaurant();
-  const [offerList, setOfferList] = useState([]);
+  const { id } = params;
+  const restaurant = useRestaurant(id);
   const restaurantData = restaurant?.cards.filter((c) => {
     return (
       c?.card?.card["@type"] ==

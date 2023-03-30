@@ -11,16 +11,22 @@ const ItemCategory = ({ data, isVeg }) => {
   };
   return (
     <div>
-      <div role={"button"} onClick={toggleSection}>
-        <div>{title + " (" + itemCards.length + ")"}</div>
+      <div
+        className="menuCard-titleHeader d-flex"
+        role={"button"}
+        onClick={toggleSection}
+      >
+        <div className="menuCard-Header">
+          {title + " (" + itemCards.length + ")"}
+        </div>
         {isOpen ? (
-          <button>
+          <div className="arrow">
             <BiChevronUp />
-          </button>
+          </div>
         ) : (
-          <button>
+          <div className="arrow">
             <BiChevronDown />
-          </button>
+          </div>
         )}
       </div>
       {isOpen && (

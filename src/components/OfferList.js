@@ -17,11 +17,13 @@ const OfferList = ({
           />
           <p className="headerOfferP">{header}</p>
         </div>
-        <div className="offerCode d-flex">
-          <p>{couponCode}</p>
-          <p>|</p>
-          <p>{description}</p>
-        </div>
+        {couponCode && (
+          <div className="offerCode d-flex">
+            <p>{couponCode}</p>
+            <p>|</p>
+            <p>{description}</p>
+          </div>
+        )}
       </div>
     </div>
   );

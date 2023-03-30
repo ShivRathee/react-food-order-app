@@ -10,16 +10,19 @@ const MenuVegFilter = ({ data, onfilter }) => {
   }
   return (
     <div>
-      <label>Veg Only</label>
-      <label>
-        <input
-          type="checkbox"
-          value=""
-          className="sr-only peer"
-          onChange={(e) => onfilter(e)}
-        />
-        <div></div>
-      </label>
+      <div className="vegOnly ">
+        <label>Veg Only</label>
+        <label>
+          <input
+            type="checkbox"
+            value=""
+            className="checkbox"
+            onChange={(e) => onfilter(e)}
+          />
+          <div></div>
+        </label>
+      </div>
+      <div className="menuCard-divider"></div>
     </div>
   );
 };
